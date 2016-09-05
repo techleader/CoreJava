@@ -4,10 +4,12 @@ package com.learn.core.java.LinkedList;
  * Created by Meetansh on 19-07-2016.
  */
 public class Node {
-    int i;
+    int data;
     Node next;
+    Node(){}
+
     Node(int a){
-        i=a;
+        data=a;
     }
 
     public static  int findMiddleNode(Node node){
@@ -18,7 +20,7 @@ public class Node {
             fastPointer=fastPointer.next;
             if(fastPointer!=null &&fastPointer.next!=null){
                 slowPointer=slowPointer.next;
-                val=slowPointer.i;
+                val=slowPointer.data;
                 fastPointer=fastPointer.next;
             }
         }
@@ -37,7 +39,7 @@ public class Node {
         System.out.println(" middle = "+middile);
         while(start.next!=null){
            start=start.next;
-            System.out.println(start.i);
+            System.out.println(start.data);
         }
 
 

@@ -121,8 +121,6 @@ public class LinkedListTraversal {
         linkedListTraversal.printLinkedList();
         int value=linkedListTraversal.FindMiddleNode();
         System.out.println("middle Node : "+value);
-        ConcurrentHashMap
-
 
     }
 }
