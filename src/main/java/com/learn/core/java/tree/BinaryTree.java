@@ -1,5 +1,8 @@
 package com.learn.core.java.tree;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by Meetansh on 11-07-2016.
  */
@@ -11,38 +14,89 @@ package com.learn.core.java.tree;
 class BinaryTree {
 
     static Node head;
+    static Node root;
 
-    /* Given a binary search tree and a number,
+   /* Given a binary search tree and a number,
      inserts a new node with the given number in
      the correct place in the tree. Returns the new
      root pointer which the caller should then use
      (the standard trick to avoid using reference
      parameters). */
-    Node insert(Node node, int data) {
 
-        /* 1. If the tree is empty, return a new,
-         single node */
+    public Node insert(int data) {
+        return insert(root,data);
+    }
+
+    private Node insert(Node node, int data) {
         if (node == null) {
             return (new Node(data));
         } else {
-
-            Node temp = null;
-
-            /* 2. Otherwise, recur down the tree */
             if (data <= node.data) {
-                temp = insert(node.left, data);
-                node.left = temp;
-                temp.parent = node;
-
+                node.left = insert(node.left, data);
+                node.left.parent = node;
             } else {
-                temp = insert(node.right, data);
-                node.right = temp;
-                temp.parent = node;
+                node.right = insert(node.right, data);
+                node.right.parent = node;
             }
-
-            /* return the (unchanged) node pointer */
             return node;
         }
+    }
+
+
+    public Node inOrderSuccessorV2WithoutParent(Node root,Node n) {
+        if(root == null || n == null) {  return null;  }
+        Node suc = null;
+        if(n.right != null ) {
+            return minNode(n.right);
+        } else {
+            while(root!=null) {
+                if(root.data< n.data) {
+                    root = root.right;
+                } else if(root.data > n.data) {
+                    suc = root;
+                    root = root.left;
+                } else {
+                    break;
+                }
+            }
+            return suc;
+        }
+    }
+
+    public Node maxNode(Node root) {
+        if(root == null) return null;
+        if(root.right != null ) {
+            return maxNode(root.right);
+        }
+        return root;
+    }
+
+    public Node maxParent(Node root,int data) {
+        if(root == null) return null;
+        if(root.data > data ) {
+            return root;
+        }else {
+            return maxParent(root.parent,data);
+        }
+    }
+
+    public Node minNode(Node root) {
+        if(root == null) return null;
+        if(root.left != null ) {
+            return minNode(root.left);
+        }
+        return root;
+    }
+
+    Node inOrderSuccessorV1(Node n) {
+        if(n==null){  return null;}
+        Node successor = null;
+        if(n.right != null ) {
+            successor = minNode(n.right);
+        } else {
+            successor = maxParent(n.parent, n.data);
+        }
+        return successor;
     }
 
     Node inOrderSuccessor(Node root, Node n) {
@@ -102,24 +156,38 @@ class BinaryTree {
     }
 
     // Driver program to test above functions
-    public static void main(StringS[] args) {
+    public static void main(String[] args) {
         BinaryTree tree = new BinaryTree();
         Node root = null, temp = null, suc = null, min = null;
         root = tree.insert(root, 25);
         root = tree.insert(root, 8);
         root = tree.insert(root, 22);
+        root = tree.insert(root, 36);
         root = tree.insert(root, 4);
         root = tree.insert(root, 12);
         root = tree.insert(root, 10);
         root = tree.insert(root, 14);
-        temp = root.left.right.right;
-        suc = tree.inOrderSuccessor(root, temp);
+        temp = root.left.right.left.right;
+        System.out.println("Tree..........");
+        TreeUtils.printTree(root);
+        System.out.println("..........");
+        System.out.println("Inorder Traversal ");
+        TreeUtils.inOrderTraverse(root);
+        System.out.println("Getting Inorder Sucessor of " + temp);
+
+        printSuccessor(tree.inOrderSuccessor(root, temp),temp.data);
+        printSuccessor(tree.inOrderSuccessorV1(temp),temp.data);
+        printSuccessor(tree.inOrderSuccessorV2WithoutParent(root,temp),temp.data);
+
+        System.out.println("Is it a heap tree " + tree.isHeapUtil(root));
+    }
+
+    private static void printSuccessor(Node suc, int data){
         if (suc != null) {
-            System.out.println("Inorder successor of " + temp.data +
+            System.out.println("Inorder successor of " + data +
                     " is " + suc.data);
         } else {
             System.out.println("Inorder successor does not exist");
         }
-        System.out.println("Is it a heap tree " + tree.isHeapUtil(root));
     }
 }

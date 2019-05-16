@@ -23,6 +23,7 @@ public class CoinProblem {
     }
 
     public static void main(String... s){
+        //System.out.println(count(new int[]{1,2,3}, 3 , 4));
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             String line = br.readLine();
@@ -31,7 +32,7 @@ public class CoinProblem {
             }
             String[] arr = line.trim().split(" ");
             int n = Integer.parseInt(arr[0]);
-            int m = Integer.parseInt(arr[0]);
+            int m = Integer.parseInt(arr[1]);
             if (n < 1 || n > 250 || m < 1 || m > 50) return;
 
             int a[] = new int[m];
@@ -50,6 +51,7 @@ public class CoinProblem {
         }catch (Exception e){
             System.out.println(0);
         }finally {
+
 
         }
     }

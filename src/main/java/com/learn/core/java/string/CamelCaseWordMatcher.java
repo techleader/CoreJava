@@ -35,6 +35,8 @@ public class CamelCaseWordMatcher {
         words.stream().filter(word -> isWordMatching(word,"HW")).collect(Collectors.toList()).forEach(System.out::println);
         System.out.println("-------------- Pattern HM ----");
         words.stream().filter(word -> isWordMatching(word,"HM")).collect(Collectors.toList()).forEach(System.out::println);
+        System.out.println("-------------- Pattern Hi ----");
+        words.stream().filter(word -> isWordMatching(word,"Hi")).collect(Collectors.toList()).forEach(System.out::println);
 
     }
 

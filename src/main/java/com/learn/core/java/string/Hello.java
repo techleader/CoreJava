@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class Hello {
     public static void main(String arg[]){
-
+        System.out.println("hello");
         //StringS line ="welcome to \n 30 Days of  code!";
        /* Scanner scan = new Scanner(System.in);
         StringS hello="hello";

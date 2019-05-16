@@ -1,8 +1,6 @@
 package com.learn.core.java.parkingSystem;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
 
-import java.sql.Time;
 import java.util.ArrayList;
 
 /**
