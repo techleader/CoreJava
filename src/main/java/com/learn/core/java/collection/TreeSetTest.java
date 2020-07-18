@@ -9,6 +9,10 @@ public class TreeSetTest {
 
 
     public static void main(String arg[]){
+
+        Set<Employee> set = new TreeSet<>();
+
+
         Employee e1=new Employee();
         Employee e2=new Employee();
         Employee e3=new Employee();
@@ -19,11 +23,7 @@ public class TreeSetTest {
         Comparator<Employee> salaryComp = new Comparator<Employee>() {
             @Override
             public int compare(Employee e1, Employee e2) {
-                if(e1.getSalary() > e2.getSalary()){
-                    return 1;
-                } else {
-                    return -1;
-                }
+                return e1.getSalary() - e2.getSalary();
             }
         };
 
@@ -44,6 +44,8 @@ public class TreeSetTest {
         e2.setSalary(30000);
         e3.setName("monu");
         e3.setSalary(2000);
+        e4.setName("Meetansh");
+        e4.setSalary(30000);
 
 
 
@@ -54,6 +56,7 @@ public class TreeSetTest {
         list.add(e1);
         list.add(e2);
         list.add(e3);
+        list.add(e4);
 
         Collections.sort(list,anmeComp);
         Collections.unmodifiableList(list);

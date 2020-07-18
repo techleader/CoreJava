@@ -19,6 +19,11 @@ public class CoinProblem {
             return 0;
         }
         // count is sum of solutions (i) including S[m-1] (ii) excluding S[m-1]
+        int m1 = count( coins, m - 1, n );
+        int m2 =  count( coins, m, n-coins[m-1] );
+
+
+
         return count( coins, m - 1, n ) + count( coins, m, n-coins[m-1] );
     }
 

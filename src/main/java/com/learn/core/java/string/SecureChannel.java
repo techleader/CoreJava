@@ -2,8 +2,12 @@ package com.learn.core.java.string;
 
 import org.junit.Assert;
 
+import java.util.HashMap;
+
 public class SecureChannel {
     static String secureChannel(int operation, String message, String key) {
+        HashMap h = new HashMap();
+        //put();
         String invalidCombination = "-1";
         if (key == null || message == null   )  {
             return invalidCombination;

@@ -1,4 +1,4 @@
-package com.learn.core.java.hackerrank;
+package com.learn.core.java.string;
 
 /**
  * Created by Meetansh on 16-03-2017.
@@ -7,7 +7,8 @@ package com.learn.core.java.hackerrank;
 import java.util.Scanner;
 
 /**
- * Jessica is learning to code and was recently introduced to the  function. This function compares two integers and returns the smaller one. This is what calling the function looks like when comparing two integers  and :
+ * Jessica is learning to code and was recently introduced to the  function. This function compares two integers and returns the smaller one.
+ * This is what calling the function looks like when comparing two integers  and :
 
  min(a, b)
  Jessica realizes that she can also find the smallest of three integers , , and  if she puts the  function inside of another  function:

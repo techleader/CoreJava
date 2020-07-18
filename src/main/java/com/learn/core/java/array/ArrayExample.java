@@ -1,8 +1,8 @@
 package com.learn.core.java.array;
 
+
+
 public class ArrayExample {
-
-
 
   public static int  findNumber(int n,int a[]){
       int number= -1;
@@ -21,7 +21,7 @@ public class ArrayExample {
         int a3[] = {9,  4, 7, 6, 2, 5};
         int indexValue;
 
-        indexValue = new ArrayExample().findNumber(5,a1);
+        indexValue = findNumber(5,a1);
         indexfinder(indexValue);
         indexValue = findNumber(5, a2);
         indexfinder(indexValue);

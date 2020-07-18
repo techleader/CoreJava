@@ -5,7 +5,7 @@ package com.learn.core.java.string;
  */
 /* A Java program to evaluate a given expression where tokens are separated
    by space.
-   Test Cases:
+   HashCodeAndEqualMethod Cases:
      "10 + 2 * 6"            ---> 22
      "100 * 2 + 12"          ---> 212
      "100 * ( 2 + 12 )"      ---> 1400
