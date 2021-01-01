@@ -1,1 +1,7 @@
 ./*.impl
+./target/
+/target/
+/bin/
+.settings
+.project
+.classpath
