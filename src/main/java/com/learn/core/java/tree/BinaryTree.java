@@ -88,7 +88,7 @@ class BinaryTree {
         return root;
     }
 
-    Node inOrderSuccessorV1(Node n) {
+    Node inOrderSuccessorWithRecursion(Node n) {
         if(n==null){  return null;}
         Node successor = null;
         if(n.right != null ) {
@@ -99,7 +99,7 @@ class BinaryTree {
         return successor;
     }
 
-    Node inOrderSuccessor(Node root, Node n) {
+    Node inOrderSuccessorWithLoop(Node n) {
         // step 1 of the above algorithm
         if(n==null){
             return null;
@@ -167,7 +167,7 @@ class BinaryTree {
         root = tree.insert(root, 12);
         root = tree.insert(root, 10);
         root = tree.insert(root, 14);
-        temp = root.left.right.left.right;
+        temp = root.left;
         System.out.println("Tree..........");
         TreeUtils.printTree(root);
         System.out.println("..........");
@@ -175,8 +175,8 @@ class BinaryTree {
         TreeUtils.inOrderTraverse(root);
         System.out.println("Getting Inorder Sucessor of " + temp);
 
-        printSuccessor(tree.inOrderSuccessor(root, temp),temp.data);
-        printSuccessor(tree.inOrderSuccessorV1(temp),temp.data);
+        printSuccessor(tree.inOrderSuccessorWithLoop(temp),temp.data);
+        printSuccessor(tree.inOrderSuccessorWithRecursion(temp),temp.data);
         printSuccessor(tree.inOrderSuccessorV2WithoutParent(root,temp),temp.data);
 
         System.out.println("Is it a heap tree " + tree.isHeapUtil(root));
