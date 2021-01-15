@@ -31,10 +31,10 @@ public class FirstClass {
 
         System.out.println("total marks are " + total);
 
-        if(total >= 90){
+        if(total >= 50){
             System.out.print("You are pass");
         }
-        if(total < 90){
+        if(total < 50){
             System.out.print("You are fail");
         }
 

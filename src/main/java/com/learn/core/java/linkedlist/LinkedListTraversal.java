@@ -1,4 +1,4 @@
-package com.learn.core.java.LinkedList;
+package com.learn.core.java.linkedlist;
 
 import java.util.concurrent.ConcurrentHashMap;
 

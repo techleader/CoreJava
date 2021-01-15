@@ -1,4 +1,4 @@
-package com.learn.core.java.LinkedList;
+package com.learn.core.java.linkedlist;
 
 /**
  * Created by Meetansh on 18-07-2016.

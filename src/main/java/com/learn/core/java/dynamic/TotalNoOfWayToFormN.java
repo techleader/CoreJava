@@ -1,5 +1,6 @@
 package com.learn.core.java.dynamic;
 
+//TODO incomplete
 public class TotalNoOfWayToFormN {
     public static void main(String[] args) {
 
